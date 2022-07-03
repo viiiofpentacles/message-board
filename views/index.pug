@@ -3,8 +3,9 @@ extends layout
 block content
   h1= title
   a(href='/new') Add a new message!
-  each message in messages
-    div(class='message-card')
-      div= `From: ${message.user}`
-      div= message.added 
-      div= message.text
+  div(class='message-container')
+    each message in messages
+      div(class='message-card')
+        div= `From: ${message.user}`
+        div(class='message-time')= message.added 
+        div(class='message-text')= message.text
